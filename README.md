@@ -89,10 +89,10 @@ The user enters customer information and clicks the **Predict Churn** button. Th
 ```text
 Task_04_AI_ML/
 │
-├── dataset/
+├── dataset/WA_Fn-UseC_-Telco-Customer-Churn.csv
 │
 ├── notebook/
-│   └── customer_churn_prediction.ipynb
+│   └── Customer_Churn_Prediction_System.ipynb
 │
 ├── Model/
 │   ├── customer_churn_model.pkl
