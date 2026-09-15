@@ -89,7 +89,7 @@ The user enters customer information and clicks the **Predict Churn** button. Th
 ```text
 Task_04_AI_ML/
 │
-├── data/
+├── dataset/
 │
 ├── notebook/
 │   └── customer_churn_prediction.ipynb
