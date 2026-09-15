@@ -1,11 +1,33 @@
-import streamlit as st
+import os
 import joblib
+import pickle
 import pandas as pd
+import streamlit as st
 
+# Safe path resolution
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Load trained model and scaler
-model = joblib.load("Model/customer_churn_model.pkl")
-scaler = joblib.load("Model/scaler.pkl")
+# Model aur Scaler ke absolute paths
+model_path = os.path.join(BASE_DIR, "Model", "customer_churn_model.pkl")
+scaler_path = os.path.join(BASE_DIR, "Model", "scaler.pkl")
+
+# Load model safely
+model = None
+if os.path.exists(model_path):
+    try:
+        model = joblib.load(model_path)
+    except Exception:
+        with open(model_path, "rb") as f:
+            model = pickle.load(f)
+
+# Load scaler safely
+scaler = None
+if os.path.exists(scaler_path):
+    try:
+        scaler = joblib.load(scaler_path)
+    except Exception:
+        with open(scaler_path, "rb") as f:
+            scaler = pickle.load(f)
 
 
 # App title
